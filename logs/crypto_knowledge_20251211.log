@@ -1,0 +1,231 @@
+2025-12-11 00:02:56,273 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:02:56,273 - crypto_knowledge - INFO - Fetching top 3 cryptocurrencies
+2025-12-11 00:02:56,869 - crypto_knowledge - INFO - Successfully fetched 3 cryptocurrencies
+2025-12-11 00:02:56,871 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 00:02:56,872 - crypto_knowledge - INFO - Extracted 12 facts from 3 cryptocurrencies
+2025-12-11 00:02:56,873 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:03:04,151 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:03:04,152 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:03:04,153 - crypto_knowledge - INFO - Generating embeddings for 12 facts...
+2025-12-11 00:03:06,007 - crypto_knowledge - INFO - Added 12 facts to vector database
+2025-12-11 00:03:06,008 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:03:12,431 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:03:12,434 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:03:12,436 - crypto_knowledge - INFO - Crypto retriever initialized
+2025-12-11 00:03:14,207 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 00:03:14,209 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 00:03:14,309 - crypto_knowledge - INFO - Found 10 relevant facts for query: What is Bitcoin's current price?
+2025-12-11 00:03:14,309 - crypto_knowledge - INFO - Retrieved 4 relevant facts for query: 'What is Bitcoin's current price?'
+2025-12-11 00:04:01,532 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:04:07,839 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:04:07,840 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:04:07,840 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:04:12,039 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:04:12,039 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:04:12,040 - crypto_knowledge - INFO - Crypto retriever initialized
+2025-12-11 00:04:13,051 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 00:04:13,054 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 00:04:13,116 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:04:13,117 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 00:04:13,617 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 00:04:34,526 - crypto_knowledge - INFO - Found 10 relevant facts for query: How has Ethereum performed today?
+2025-12-11 00:04:34,528 - crypto_knowledge - INFO - Retrieved 0 relevant facts for query: 'How has Ethereum performed today?'
+2025-12-11 00:07:43,036 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:07:43,038 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 00:07:43,512 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 00:07:43,516 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 00:07:43,518 - crypto_knowledge - INFO - Extracted 40 facts from 10 cryptocurrencies
+2025-12-11 00:07:43,536 - crypto_knowledge - INFO - Generating embeddings for 40 facts...
+2025-12-11 00:07:44,133 - crypto_knowledge - INFO - Added 40 facts to vector database
+2025-12-11 00:07:48,083 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:07:48,086 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 00:07:48,538 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 00:07:48,541 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 00:07:48,542 - crypto_knowledge - INFO - Extracted 40 facts from 10 cryptocurrencies
+2025-12-11 00:07:48,553 - crypto_knowledge - INFO - Generating embeddings for 40 facts...
+2025-12-11 00:07:49,122 - crypto_knowledge - INFO - Added 40 facts to vector database
+2025-12-11 00:07:51,328 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:07:51,328 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 00:07:51,770 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 00:07:51,770 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 00:07:51,771 - crypto_knowledge - INFO - Extracted 40 facts from 10 cryptocurrencies
+2025-12-11 00:07:51,774 - crypto_knowledge - INFO - Generating embeddings for 40 facts...
+2025-12-11 00:07:52,254 - crypto_knowledge - INFO - Added 40 facts to vector database
+2025-12-11 00:07:54,359 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:07:54,363 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 00:07:54,860 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 00:07:54,861 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 00:07:54,862 - crypto_knowledge - INFO - Extracted 40 facts from 10 cryptocurrencies
+2025-12-11 00:07:54,869 - crypto_knowledge - INFO - Generating embeddings for 40 facts...
+2025-12-11 00:07:55,792 - crypto_knowledge - INFO - Added 40 facts to vector database
+2025-12-11 00:08:07,863 - crypto_knowledge - INFO - Found 10 relevant facts for query: what is the bitcoin price today?
+2025-12-11 00:08:07,864 - crypto_knowledge - INFO - Retrieved 5 relevant facts for query: 'what is the bitcoin price today?'
+2025-12-11 00:08:17,298 - crypto_knowledge - INFO - Found 10 relevant facts for query: How has Ethereum performed today?
+2025-12-11 00:08:17,298 - crypto_knowledge - INFO - Retrieved 0 relevant facts for query: 'How has Ethereum performed today?'
+2025-12-11 00:42:20,144 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:42:20,146 - crypto_knowledge - INFO - Fetching top 3 cryptocurrencies
+2025-12-11 00:42:20,929 - crypto_knowledge - INFO - Successfully fetched 3 cryptocurrencies
+2025-12-11 00:42:20,932 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 00:42:20,934 - crypto_knowledge - INFO - Extracted 12 facts from 3 cryptocurrencies
+2025-12-11 00:42:20,936 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:42:33,129 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:42:33,129 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:42:33,130 - crypto_knowledge - INFO - Generating embeddings for 12 facts...
+2025-12-11 00:42:36,846 - crypto_knowledge - INFO - Added 12 facts to vector database
+2025-12-11 00:42:36,847 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:42:40,223 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:42:40,226 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:42:40,227 - crypto_knowledge - INFO - Dynamic crypto retriever initialized
+2025-12-11 00:42:42,832 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 00:42:42,837 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 00:42:42,850 - crypto_knowledge - INFO - Query analysis: price, cryptos: ['BTC'], confidence: 1.00
+2025-12-11 00:42:42,939 - crypto_knowledge - INFO - Found 8 relevant facts for query: What is Bitcoin's current price?
+2025-12-11 00:42:42,984 - crypto_knowledge - INFO - Found 16 relevant facts for query: What is Bitcoin's current price?
+2025-12-11 00:42:43,061 - crypto_knowledge - INFO - Found 8 relevant facts for query: price cryptocurrency
+2025-12-11 00:42:43,200 - crypto_knowledge - INFO - Found 8 relevant facts for query: what is cryptocurrency
+2025-12-11 00:42:43,204 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'What is Bitcoin's current price?'
+2025-12-11 00:43:58,730 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:44:02,368 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:44:02,369 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:44:02,369 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 00:44:04,835 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 00:44:04,836 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 00:44:04,837 - crypto_knowledge - INFO - Dynamic crypto retriever initialized
+2025-12-11 00:44:05,180 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 00:44:05,181 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 00:44:05,209 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:44:05,209 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 00:44:05,718 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 00:44:34,854 - crypto_knowledge - INFO - Query analysis: performance, cryptos: ['ETH'], confidence: 1.00
+2025-12-11 00:44:37,487 - crypto_knowledge - INFO - Found 8 relevant facts for query: How has Ethereum performed today?
+2025-12-11 00:44:37,575 - crypto_knowledge - INFO - Found 16 relevant facts for query: How has Ethereum performed today?
+2025-12-11 00:44:37,661 - crypto_knowledge - INFO - Found 8 relevant facts for query: today cryptocurrency
+2025-12-11 00:44:37,662 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'How has Ethereum performed today?'
+2025-12-11 00:50:41,729 - crypto_knowledge - INFO - Query analysis: price, cryptos: ['BTC'], confidence: 1.00
+2025-12-11 00:50:41,806 - crypto_knowledge - INFO - Found 8 relevant facts for query: What recent news is affecting Bitcoin's price?
+2025-12-11 00:50:41,878 - crypto_knowledge - INFO - Found 16 relevant facts for query: What recent news is affecting Bitcoin's price?
+2025-12-11 00:50:41,927 - crypto_knowledge - INFO - Found 8 relevant facts for query: price cryptocurrency
+2025-12-11 00:50:41,928 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'What recent news is affecting Bitcoin's price?'
+2025-12-11 00:50:43,845 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 00:50:43,846 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 00:50:44,346 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 00:51:09,628 - crypto_knowledge - INFO - Query analysis: comparison, cryptos: ['ETH'], confidence: 1.00
+2025-12-11 00:51:09,719 - crypto_knowledge - INFO - Found 8 relevant facts for query: How many DApps are built on Ethereum vs other chains?
+2025-12-11 00:51:09,782 - crypto_knowledge - INFO - Found 16 relevant facts for query: How many DApps are built on Ethereum vs other chains?
+2025-12-11 00:51:09,840 - crypto_knowledge - INFO - Found 8 relevant facts for query: vs cryptocurrency
+2025-12-11 00:51:09,841 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'How many DApps are built on Ethereum vs other chains?'
+2025-12-11 12:13:57,313 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 12:14:04,961 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 12:14:04,962 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 12:14:04,962 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 12:14:07,267 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 12:14:07,268 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 12:14:07,268 - crypto_knowledge - INFO - Dynamic crypto retriever initialized
+2025-12-11 12:14:07,518 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 12:14:07,520 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 12:14:07,550 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 12:14:07,551 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 12:14:08,015 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 12:14:25,544 - crypto_knowledge - INFO - Query analysis: performance, cryptos: ['ETH'], confidence: 1.00
+2025-12-11 12:14:28,937 - crypto_knowledge - INFO - Found 8 relevant facts for query: How has Ethereum performed today?
+2025-12-11 12:14:29,102 - crypto_knowledge - INFO - Found 16 relevant facts for query: How has Ethereum performed today?
+2025-12-11 12:14:29,263 - crypto_knowledge - INFO - Found 8 relevant facts for query: today cryptocurrency
+2025-12-11 12:14:29,266 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'How has Ethereum performed today?'
+2025-12-11 12:15:57,314 - crypto_knowledge - INFO - Comparing RAG vs non-RAG answers for: How has Ethereum performed today?
+2025-12-11 12:15:57,316 - crypto_knowledge - INFO - Query analysis: performance, cryptos: ['ETH'], confidence: 1.00
+2025-12-11 12:15:57,428 - crypto_knowledge - INFO - Found 8 relevant facts for query: How has Ethereum performed today?
+2025-12-11 12:15:57,570 - crypto_knowledge - INFO - Found 16 relevant facts for query: How has Ethereum performed today?
+2025-12-11 12:15:57,735 - crypto_knowledge - INFO - Found 8 relevant facts for query: today cryptocurrency
+2025-12-11 12:15:57,737 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'How has Ethereum performed today?'
+2025-12-11 13:58:05,091 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 13:58:11,289 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 13:58:11,290 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 13:58:11,290 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 13:58:16,355 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 13:58:16,356 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 13:58:16,356 - crypto_knowledge - INFO - Dynamic crypto retriever initialized
+2025-12-11 13:58:16,950 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 13:58:16,951 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 13:58:16,997 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 13:58:16,998 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 13:58:18,337 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 13:59:01,206 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 13:59:01,208 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 13:59:01,870 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 13:59:01,871 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 13:59:01,871 - crypto_knowledge - INFO - Extracted 40 facts from 10 cryptocurrencies
+2025-12-11 13:59:01,876 - crypto_knowledge - INFO - Generating embeddings for 40 facts...
+2025-12-11 13:59:03,869 - crypto_knowledge - INFO - Added 40 facts to vector database
+2025-12-11 13:59:20,760 - crypto_knowledge - INFO - Query analysis: comparison, cryptos: [], confidence: 0.70
+2025-12-11 13:59:20,850 - crypto_knowledge - INFO - Found 16 relevant facts for query: Which cryptocurrency has the highest market cap?
+2025-12-11 13:59:20,924 - crypto_knowledge - INFO - Found 8 relevant facts for query: which cryptocurrency
+2025-12-11 13:59:20,977 - crypto_knowledge - INFO - Found 8 relevant facts for query: market cap cryptocurrency
+2025-12-11 13:59:20,978 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'Which cryptocurrency has the highest market cap?'
+2025-12-11 14:02:45,658 - crypto_knowledge - INFO - Query analysis: market_data, cryptos: [], confidence: 0.70
+2025-12-11 14:02:45,735 - crypto_knowledge - INFO - Found 16 relevant facts for query: What was the market cap before 10 mins
+2025-12-11 14:02:45,853 - crypto_knowledge - INFO - Found 8 relevant facts for query: market cap cryptocurrency
+2025-12-11 14:02:45,854 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'What was the market cap before 10 mins'
+2025-12-11 14:15:18,294 - crypto_knowledge - INFO - Query analysis: price, cryptos: ['BTC'], confidence: 1.00
+2025-12-11 14:15:18,378 - crypto_knowledge - INFO - Found 8 relevant facts for query: ?What war the market price of bitcoin before 1 hour
+2025-12-11 14:15:18,437 - crypto_knowledge - INFO - Found 16 relevant facts for query: ?What war the market price of bitcoin before 1 hour
+2025-12-11 14:15:18,502 - crypto_knowledge - INFO - Found 8 relevant facts for query: price cryptocurrency
+2025-12-11 14:15:18,549 - crypto_knowledge - INFO - Found 8 relevant facts for query: hour cryptocurrency
+2025-12-11 14:15:18,550 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: '?What war the market price of bitcoin before 1 hour'
+2025-12-11 14:15:20,654 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 14:15:20,656 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 14:15:21,753 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-11 14:40:59,968 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 14:41:01,391 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 14:41:01,392 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 14:41:01,392 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 14:41:01,715 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 14:41:01,716 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 14:41:01,716 - crypto_knowledge - INFO - Dynamic crypto retriever initialized
+2025-12-11 14:41:02,153 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 14:41:02,154 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 14:41:02,181 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 14:41:02,181 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-11 14:41:02,188 - crypto_knowledge - ERROR - Request failed: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=False&price_change_percentage=24h (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001A3A2B7BC10>: Failed to resolve 'api.coingecko.com' ([Errno 11001] getaddrinfo failed)"))
+2025-12-11 14:41:04,201 - crypto_knowledge - ERROR - Request failed: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=False&price_change_percentage=24h (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001A3A2B7B430>: Failed to resolve 'api.coingecko.com' ([Errno 11001] getaddrinfo failed)"))
+2025-12-11 14:41:06,219 - crypto_knowledge - ERROR - Request failed: HTTPSConnectionPool(host='api.coingecko.com', port=443): Max retries exceeded with url: /api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=False&price_change_percentage=24h (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001A3A2B911E0>: Failed to resolve 'api.coingecko.com' ([Errno 11001] getaddrinfo failed)"))
+2025-12-11 14:41:06,220 - crypto_knowledge - ERROR - Failed to fetch data after 3 attempts
+2025-12-11 14:41:06,220 - crypto_knowledge - ERROR - Failed to fetch cryptocurrency data
+2025-12-11 14:41:42,037 - crypto_knowledge - INFO - Query analysis: price, cryptos: ['BTC'], confidence: 1.00
+2025-12-11 14:41:43,984 - crypto_knowledge - INFO - Found 8 relevant facts for query: Compare the price of bitcoin before 10 mins and now
+2025-12-11 14:41:44,068 - crypto_knowledge - INFO - Found 16 relevant facts for query: Compare the price of bitcoin before 10 mins and now
+2025-12-11 14:41:44,126 - crypto_knowledge - INFO - Found 8 relevant facts for query: price cryptocurrency
+2025-12-11 14:41:44,212 - crypto_knowledge - INFO - Found 8 relevant facts for query: compare cryptocurrency
+2025-12-11 14:41:44,213 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'Compare the price of bitcoin before 10 mins and now'
+2025-12-11 14:41:45,719 - crypto_knowledge - ERROR - Error generating answer with context: Connection error.
+2025-12-11 14:42:52,957 - crypto_knowledge - INFO - Query analysis: price, cryptos: [], confidence: 0.70
+2025-12-11 14:42:53,045 - crypto_knowledge - INFO - Found 16 relevant facts for query: what is the market price of bitccoin before 10 mins
+2025-12-11 14:42:53,099 - crypto_knowledge - INFO - Found 8 relevant facts for query: price cryptocurrency
+2025-12-11 14:42:53,166 - crypto_knowledge - INFO - Found 8 relevant facts for query: what is cryptocurrency
+2025-12-11 14:42:53,167 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'what is the market price of bitccoin before 10 mins'
+2025-12-11 14:43:19,521 - crypto_knowledge - INFO - Query analysis: general, cryptos: [], confidence: 0.70
+2025-12-11 14:43:19,581 - crypto_knowledge - INFO - Found 16 relevant facts for query: what is the weather out there?
+2025-12-11 14:43:19,636 - crypto_knowledge - INFO - Found 8 relevant facts for query: what is cryptocurrency
+2025-12-11 14:43:19,637 - crypto_knowledge - WARNING - No facts met threshold 0.1, using top results
+2025-12-11 14:43:19,637 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'what is the weather out there?'
+2025-12-11 14:46:10,593 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-11 14:46:10,594 - crypto_knowledge - INFO - Fetching top 3 cryptocurrencies
+2025-12-11 14:46:16,298 - crypto_knowledge - INFO - Successfully fetched 3 cryptocurrencies
+2025-12-11 14:46:16,301 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-11 14:46:16,305 - crypto_knowledge - INFO - Extracted 12 facts from 3 cryptocurrencies
+2025-12-11 14:46:16,308 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 14:46:24,403 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 14:46:24,403 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 14:46:24,404 - crypto_knowledge - INFO - Generating embeddings for 12 facts...
+2025-12-11 14:46:26,419 - crypto_knowledge - INFO - Added 12 facts to vector database
+2025-12-11 14:46:26,422 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-11 14:46:31,267 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-11 14:46:31,270 - crypto_knowledge - INFO - Vector store initialized
+2025-12-11 14:46:31,272 - crypto_knowledge - INFO - Dynamic crypto retriever initialized
+2025-12-11 14:46:32,336 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-11 14:46:32,338 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-11 14:46:32,342 - crypto_knowledge - INFO - Query analysis: price, cryptos: ['BTC'], confidence: 1.00
+2025-12-11 14:46:32,615 - crypto_knowledge - INFO - Found 8 relevant facts for query: What is Bitcoin's current price?
+2025-12-11 14:46:32,820 - crypto_knowledge - INFO - Found 16 relevant facts for query: What is Bitcoin's current price?
+2025-12-11 14:46:33,068 - crypto_knowledge - INFO - Found 8 relevant facts for query: price cryptocurrency
+2025-12-11 14:46:33,286 - crypto_knowledge - INFO - Found 8 relevant facts for query: what is cryptocurrency
+2025-12-11 14:46:33,291 - crypto_knowledge - INFO - Retrieved 8 relevant facts for query: 'What is Bitcoin's current price?'

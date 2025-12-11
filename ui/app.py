@@ -1,6 +1,20 @@
 """Streamlit dashboard for the crypto knowledge system."""
 
+import os
 import streamlit as st
+
+# Suppress ChromaDB telemetry warnings
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY"] = "False"
+
+# Page configuration MUST be first
+st.set_page_config(
+    page_title="Crypto Knowledge AI",
+    page_icon="🚀",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -24,29 +38,36 @@ from utils.config import Config
 from utils.logger import logger
 
 # Try to import LangChain generator, fallback to original if not available
+USING_LANGCHAIN = False
+CryptoVectorStore = None
+CryptoAnswerGenerator = None
+
 try:
     from knowledge.embed_store import CryptoVectorStore
     from rag_pipeline.langchain_generator import LangChainCryptoGenerator as CryptoAnswerGenerator
     USING_LANGCHAIN = True
-    st.sidebar.success("🔗 Using LangChain + Groq")
 except ImportError:
     try:
         from knowledge.embed_store_simple import SimpleCryptoVectorStore as CryptoVectorStore
-        from rag_pipeline.answer_generator import CryptoAnswerGenerator
+        # Create a dummy generator for now
+        class DummyGenerator:
+            def generate_answer(self, query, use_rag=True):
+                return type('obj', (object,), {
+                    'answer': 'LangChain generator not available. Please install langchain-groq.',
+                    'retrieval_result': type('obj', (object,), {'facts': []})(),
+                    'generation_time': 0.0
+                })()
+            def compare_answers(self, query):
+                return {
+                    'rag_answer': {'answer': 'Not available', 'context_facts': 0, 'generation_time': 0},
+                    'no_rag_answer': {'answer': 'Not available', 'generation_time': 0},
+                    'performance': {'rag_total_time': 0, 'no_rag_total_time': 0, 'facts_retrieved': 0}
+                }
+        CryptoAnswerGenerator = DummyGenerator
         USING_LANGCHAIN = False
-        st.sidebar.info("🔧 Using Simple Mode")
     except ImportError:
-        st.error("❌ Could not import required modules")
+        st.error("❌ Could not import required modules. Please run: pip install -r requirements.txt")
         st.stop()
-
-
-# Page configuration
-st.set_page_config(
-    page_title="Crypto Knowledge AI",
-    page_icon="🚀",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 # Custom CSS
 st.markdown("""
@@ -129,6 +150,12 @@ def main():
     with st.sidebar:
         st.header("🛠️ System Controls")
         
+        # Show system status
+        if USING_LANGCHAIN:
+            st.success("🔗 Using LangChain + Groq")
+        else:
+            st.info("🔧 Using Simple Mode")
+        
         # Update knowledge base
         if st.button("🔄 Update Knowledge Base", type="primary"):
             update_knowledge_base()
@@ -155,56 +182,64 @@ def main():
         max_results = st.slider("Max Search Results", 1, 10, 5)
         use_rag = st.checkbox("Use RAG (Recommended)", value=True)
     
+    # Chat input (must be outside tabs)
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+    
+    # Chat input at the top level
+    if prompt := st.chat_input("💬 Ask about cryptocurrency prices, trends, or market data..."):
+        # Add user message
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        
+        # Generate AI response
+        try:
+            _, generator = initialize_components()
+            result = generator.generate_answer(prompt, use_rag=use_rag)
+            
+            # Store message with metadata
+            st.session_state.messages.append({
+                "role": "assistant",
+                "content": result.answer,
+                "metadata": {
+                    "facts_used": len(result.retrieval_result.facts),
+                    "generation_time": f"{result.generation_time:.2f}s",
+                    "retrieval_time": f"{result.retrieval_result.retrieval_time:.2f}s",
+                    "context": result.context_used
+                }
+            })
+            
+        except Exception as e:
+            error_msg = f"Sorry, I encountered an error: {str(e)}"
+            st.session_state.messages.append({"role": "assistant", "content": error_msg})
+        
+        # Rerun to show new messages
+        st.rerun()
+    
     # Main content tabs
     tab1, tab2, tab3, tab4 = st.tabs(["💬 AI Chat", "📈 Live Data", "🔍 Knowledge Explorer", "📊 Evaluation"])
     
     with tab1:
-        st.header("💬 Ask the AI About Cryptocurrencies")
-        
-        # Initialize chat history
-        if "messages" not in st.session_state:
-            st.session_state.messages = []
+        st.header("💬 Chat History")
         
         # Display chat history
-        for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
-                if message["role"] == "assistant" and "metadata" in message:
-                    with st.expander("📋 View Context & Details"):
-                        st.json(message["metadata"])
+        if st.session_state.messages:
+            for message in st.session_state.messages:
+                with st.chat_message(message["role"]):
+                    st.markdown(message["content"])
+                    if message["role"] == "assistant" and "metadata" in message:
+                        with st.expander("📋 View Context & Details"):
+                            st.json(message["metadata"])
+        else:
+            st.info("👋 Start a conversation by typing in the chat box below!")
+            st.markdown("**Try asking:**")
+            st.markdown("- What is Bitcoin's current price?")
+            st.markdown("- Which cryptocurrency has the highest market cap?")
+            st.markdown("- How has Ethereum performed today?")
         
-        # Chat input
-        if prompt := st.chat_input("Ask about cryptocurrency prices, trends, or market data..."):
-            # Add user message
-            st.session_state.messages.append({"role": "user", "content": prompt})
-            with st.chat_message("user"):
-                st.markdown(prompt)
-            
-            # Generate AI response
-            with st.chat_message("assistant"):
-                with st.spinner("Thinking..."):
-                    try:
-                        _, generator = initialize_components()
-                        result = generator.generate_answer(prompt, use_rag=use_rag)
-                        
-                        st.markdown(result.answer)
-                        
-                        # Store message with metadata
-                        st.session_state.messages.append({
-                            "role": "assistant",
-                            "content": result.answer,
-                            "metadata": {
-                                "facts_used": len(result.retrieval_result.facts),
-                                "generation_time": f"{result.generation_time:.2f}s",
-                                "retrieval_time": f"{result.retrieval_result.retrieval_time:.2f}s",
-                                "context": result.context_used
-                            }
-                        })
-                        
-                    except Exception as e:
-                        error_msg = f"Sorry, I encountered an error: {str(e)}"
-                        st.error(error_msg)
-                        st.session_state.messages.append({"role": "assistant", "content": error_msg})
+        # Clear chat button
+        if st.button("🗑️ Clear Chat History"):
+            st.session_state.messages = []
+            st.rerun()
     
     with tab2:
         st.header("📈 Live Cryptocurrency Data")

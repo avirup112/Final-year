@@ -1,4 +1,4 @@
-"""Simplified vector embedding and storage using basic embeddings."""
+"""Simplified vector embedding and storage using ChromaDB default embeddings (no PyTorch)."""
 
 import chromadb
 from chromadb.config import Settings
@@ -6,6 +6,9 @@ from typing import List, Dict, Any, Optional
 import uuid
 from pathlib import Path
 import hashlib
+import sys
+
+sys.path.append(str(Path(__file__).parent.parent))
 
 from knowledge.fact_extractor import CryptoFact
 from utils.config import Config
@@ -88,11 +91,15 @@ class SimpleCryptoVectorStore:
             where_clause["crypto_symbol"] = crypto_filter
         
         # Search using ChromaDB's default embedding
-        results = self.collection.query(
-            query_texts=[query],
-            n_results=n_results,
-            where=where_clause if where_clause else None
-        )
+        try:
+            results = self.collection.query(
+                query_texts=[query],
+                n_results=n_results,
+                where=where_clause if where_clause else None
+            )
+        except Exception as e:
+            logger.error(f"Error searching facts: {str(e)}")
+            return []
         
         # Format results
         formatted_results = []
@@ -105,8 +112,10 @@ class SimpleCryptoVectorStore:
                     "id": results['ids'][0][i]
                 })
         
+        formatted_results.sort(key=lambda x: x.get('distance', 1.0))
+        
         logger.info(f"Found {len(formatted_results)} relevant facts for query: {query}")
-        return formatted_results
+        return formatted_results[:n_results]
     
     def get_collection_stats(self) -> Dict[str, Any]:
         """Get statistics about the collection."""

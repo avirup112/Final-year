@@ -1,6 +1,6 @@
-# AI-Powered Cryptocurrency Knowledge Update System
+# AI-Powered Cryptocurrency Knowledge System
 
-A real-time cryptocurrency data system that combines live market data with RAG (Retrieval-Augmented Generation) and LLM capabilities to provide intelligent crypto insights.
+A production-ready AI system that combines live cryptocurrency data with RAG (Retrieval-Augmented Generation) and LLM capabilities to provide intelligent crypto insights powered by LangChain + Groq.
 
 ## 🏗️ Project Structure
 
@@ -99,13 +99,14 @@ python test_module1.py
 
 ```bash
 # Install all dependencies
-python install_langchain.py
+pip install -r requirements.txt
 
-# Edit .env file with your GROQ_API_KEY
-# Get key from: https://console.groq.com
+# Setup environment
+cp .env.example .env
+# Edit .env with your GROQ_API_KEY from https://console.groq.com
 
-# Launch the system
-python launch_langchain.py
+# Test the system
+python run.py
 ```
 
 ### 2. Launch Dashboard

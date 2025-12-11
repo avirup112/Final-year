@@ -9,11 +9,10 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
 from langchain_groq import ChatGroq
-from langchain.schema import HumanMessage, SystemMessage
-from langchain.prompts import ChatPromptTemplate, PromptTemplate
-from langchain.chains import LLMChain
-from langchain.schema.runnable import RunnablePassthrough
-from langchain.schema.output_parser import StrOutputParser
+from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
 
 from rag_pipeline.retriever import CryptoRetriever, RetrievalResult
 from utils.config import Config
@@ -35,7 +34,11 @@ class LangChainCryptoGenerator:
     """LangChain-based crypto answer generator with RAG."""
     
     def __init__(self, retriever: CryptoRetriever = None):
-        self.retriever = retriever or CryptoRetriever()
+        if retriever is None:
+            from rag_pipeline.retriever import CryptoRetriever
+            self.retriever = CryptoRetriever()
+        else:
+            self.retriever = retriever
         self.model_name = Config.LLM_MODEL
         self.max_tokens = Config.MAX_TOKENS
         self.temperature = Config.TEMPERATURE
@@ -71,19 +74,22 @@ class LangChainCryptoGenerator:
             ("system", """You are a knowledgeable cryptocurrency analyst. Use the provided context to answer questions about cryptocurrencies accurately and concisely.
 
 Guidelines:
-- Base your answer primarily on the provided context
-- If the context doesn't contain enough information, say so clearly
+- Answer ANY cryptocurrency question using the provided context
+- If context is limited, clearly state what information you have vs. don't have
 - Include specific numbers, percentages, and timeframes when available
-- Be precise about data timestamps
-- If asked about comparisons, use the available data to make fair comparisons
-- Keep responses informative but concise"""),
-            ("human", """Context:
+- For price questions: provide current price and recent changes
+- For performance questions: focus on percentage changes and trends
+- For comparison questions: use available data to make fair comparisons
+- For general questions: provide comprehensive overview using available facts
+- Always mention the timeframe of your data
+- If asked about a crypto not in context, acknowledge the limitation but provide what you can"""),
+        ("human", """Context:
 {context}
 
 Question: {query}
 
-Please provide a comprehensive answer based on the context above.""")
-        ])
+Please provide a comprehensive answer using the context above. If the context doesn't fully address the question, explain what information you have and what might be missing.""")
+    ])
         
         # Non-RAG prompt template
         self.no_rag_prompt = ChatPromptTemplate.from_messages([
@@ -192,9 +198,8 @@ Important: You should clearly state that your information might not be current a
     def test_connection(self) -> bool:
         """Test LangChain Groq connection."""
         try:
-            test_response = self.llm.invoke([
-                HumanMessage(content="Say 'LangChain connection successful' in exactly those words.")
-            ])
+            test_message = HumanMessage(content="Say 'LangChain connection successful' in exactly those words.")
+            test_response = self.llm.invoke([test_message])
             
             response_text = test_response.content.strip()
             return "LangChain connection successful" in response_text

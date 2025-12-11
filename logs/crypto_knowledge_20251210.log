@@ -29,3 +29,61 @@
 2025-12-10 22:49:44,151 - crypto_knowledge - INFO - Crypto retriever initialized
 2025-12-10 22:49:44,152 - crypto_knowledge - ERROR - Failed to initialize Groq client: Client.__init__() got an unexpected keyword argument 'proxies'
 2025-12-10 22:49:44,153 - crypto_knowledge - ERROR - System initialization error: Client.__init__() got an unexpected keyword argument 'proxies'
+2025-12-10 23:17:56,578 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-10 23:17:56,579 - crypto_knowledge - INFO - Fetching top 3 cryptocurrencies
+2025-12-10 23:17:57,461 - crypto_knowledge - INFO - Successfully fetched 3 cryptocurrencies
+2025-12-10 23:17:57,461 - crypto_knowledge - INFO - Crypto fact extractor initialized
+2025-12-10 23:17:57,462 - crypto_knowledge - INFO - Extracted 12 facts from 3 cryptocurrencies
+2025-12-10 23:17:57,462 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:18:01,485 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:18:01,485 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:18:01,485 - crypto_knowledge - INFO - Generating embeddings for 12 facts...
+2025-12-10 23:18:02,073 - crypto_knowledge - INFO - Added 12 facts to vector database
+2025-12-10 23:18:02,074 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:18:04,391 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:18:04,391 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:18:04,392 - crypto_knowledge - INFO - Crypto retriever initialized
+2025-12-10 23:18:04,728 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-10 23:18:04,730 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-10 23:18:04,757 - crypto_knowledge - INFO - Found 10 relevant facts for query: What is Bitcoin's current price?
+2025-12-10 23:18:04,758 - crypto_knowledge - INFO - Retrieved 0 relevant facts for query: 'What is Bitcoin's current price?'
+2025-12-10 23:43:58,779 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:44:04,415 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:44:04,415 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:44:04,415 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:44:07,561 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:44:07,561 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:44:07,562 - crypto_knowledge - INFO - Crypto retriever initialized
+2025-12-10 23:44:08,601 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-10 23:44:08,603 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-10 23:45:50,697 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:45:59,532 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:45:59,533 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:45:59,534 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:46:03,512 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:46:03,514 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:46:03,515 - crypto_knowledge - INFO - Crypto retriever initialized
+2025-12-10 23:46:04,980 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-10 23:46:04,981 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-10 23:46:05,098 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-10 23:46:05,101 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-10 23:46:05,606 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-10 23:46:38,777 - crypto_knowledge - INFO - Found 10 relevant facts for query: What is Bitcoin's current price?
+2025-12-10 23:46:38,780 - crypto_knowledge - INFO - Retrieved 0 relevant facts for query: 'What is Bitcoin's current price?'
+2025-12-10 23:49:08,592 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:49:15,981 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:49:15,981 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:49:15,982 - crypto_knowledge - INFO - Loading sentence transformer model...
+2025-12-10 23:49:19,578 - crypto_knowledge - INFO - Loaded existing collection: crypto_facts
+2025-12-10 23:49:19,580 - crypto_knowledge - INFO - Vector store initialized
+2025-12-10 23:49:19,580 - crypto_knowledge - INFO - Crypto retriever initialized
+2025-12-10 23:49:21,215 - crypto_knowledge - INFO - LangChain Groq LLM initialized successfully
+2025-12-10 23:49:21,224 - crypto_knowledge - INFO - LangChain generator initialized with model: llama-3.3-70b-versatile
+2025-12-10 23:49:21,329 - crypto_knowledge - INFO - CoinGecko fetcher initialized
+2025-12-10 23:49:21,330 - crypto_knowledge - INFO - Fetching top 10 cryptocurrencies
+2025-12-10 23:49:21,846 - crypto_knowledge - INFO - Successfully fetched 10 cryptocurrencies
+2025-12-10 23:49:59,694 - crypto_knowledge - INFO - Found 10 relevant facts for query: What is Bitcoin's current price
+2025-12-10 23:49:59,695 - crypto_knowledge - INFO - Retrieved 3 relevant facts for query: 'What is Bitcoin's current price'
+2025-12-10 23:52:18,061 - crypto_knowledge - INFO - Comparing RAG vs non-RAG answers for: What is Bitcoin's current price
+2025-12-10 23:52:18,199 - crypto_knowledge - INFO - Found 10 relevant facts for query: What is Bitcoin's current price
+2025-12-10 23:52:18,200 - crypto_knowledge - INFO - Retrieved 3 relevant facts for query: 'What is Bitcoin's current price'

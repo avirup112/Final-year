@@ -1,10 +1,15 @@
 """Simple launcher for the crypto knowledge system."""
 
 import sys
+import os
 from pathlib import Path
 
 # Add project root to path
 sys.path.append(str(Path(__file__).parent))
+
+# Suppress ChromaDB telemetry warnings
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY"] = "False"
 
 def main():
     """Simple system launcher."""
@@ -16,7 +21,17 @@ def main():
         from utils.config import Config
         from data_ingestion.fetch_prices import CoinGeckoFetcher
         from knowledge.fact_extractor import CryptoFactExtractor
-        from knowledge.embed_store import CryptoVectorStore
+        
+        # Try advanced embeddings first, fallback to simple
+        try:
+            from knowledge.embed_store import CryptoVectorStore
+            print("✅ Using advanced embeddings (sentence-transformers)")
+        except Exception as e:
+            print(f"⚠️  Advanced embeddings failed: {e}")
+            print("🔄 Falling back to simple embeddings...")
+            from knowledge.embed_store_simple import SimpleCryptoVectorStore as CryptoVectorStore
+            print("✅ Using simple embeddings (ChromaDB default)")
+        
         from rag_pipeline.langchain_generator import LangChainCryptoGenerator
         
         print("✅ All modules imported successfully")
