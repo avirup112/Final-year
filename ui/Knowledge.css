@@ -1,0 +1,232 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+body {
+    background-color: #11162a;
+}
+/* Navbar */
+nav {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    background: #0d142b;
+}
+nav ul li a.active,
+nav ul li a:hover {
+    color: #ff960b;
+}
+nav .btn:hover {
+    background-color: #ff960b;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(255, 150, 11, 0.45);
+}
+
+.logo {
+    width: 35px;
+    margin-left: 270px;
+}
+
+nav ul {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 8px;
+    margin-right: 90px;
+}
+
+nav ul li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 2px;
+    overflow: hidden;
+}
+
+
+/* Optional color polish */
+nav ul li a:hover {
+    color: #ff950bee;
+}
+
+nav .btn {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 8px 25px;
+    border-radius: 20px;
+    background: transparent;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav .btn:hover {
+    background: #ff960b;
+    color: #000;
+}
+
+
+/* Container */
+.container {
+    display: flex;
+    width: 95%;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 0 0 280px;
+    background-color:#11162a;
+    padding: 20px;
+    border-radius: 14px;
+    border: 2px solid #ff960b;
+    box-shadow: 0 8px 15px rgba(255, 150, 11, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar p{
+    font-size: 12px;
+}
+input[type="number"] {
+   
+    /* Dark background */
+    color: #ff960b;
+    /* Text color */
+    border: 1px solid #ff960b;
+    border-radius: 8px;
+    padding: 3px 8px;
+    width: 40px;
+    font-weight: bold;
+    outline: none;
+}
+/* Buttons */
+.btn {
+    background-color: #ff960b;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #ffa733;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(255, 150, 11, 0.5);
+}
+
+
+/* Metric Cards */
+.metric-card {
+    background-color: rgba(255, 149, 11, 0.124);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+    border: 1px solid #ff960b;
+    color: #fff;
+    margin: 10px 5px;
+    box-shadow: 0 3px 3px rgba(255, 150, 11, 0.3);
+}
+
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 20px;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: 1px solid #ff960b;
+    background-color: rgba(255, 150, 11, 0.05);
+    color: #fff;
+        box-shadow: 0 3px 3px rgba(255, 150, 11, 0.3);
+}
+
+.search-btn {
+    background-color: #ff960b;
+    border-radius: 20px;
+    padding: 12px 25px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #ffa733;
+    box-shadow: 0 8px 22px rgba(255, 150, 11, 0.45);
+}
+
+/* Fact Cards */
+.fact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fact-card {
+    background-color: rgba(255, 150, 11, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ff960b;
+    box-shadow: 0 6px 14px rgba(255, 150, 11, 0.3);
+    transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(255, 150, 11, 0.5);
+}
+
+.fact-card h3 {
+    margin-bottom: 10px;
+    color: #ff960b;
+}
+
+.fact-card p {
+    margin-bottom: 10px;
+}
+
+.metadata {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #fff;
+}
+.fact-types h2{
+    color: #ff960b;
+}
+/* Fact Types List */
+.fact-types ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 20px;
+
+}

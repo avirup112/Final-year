@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b112a;
+}
+
+/* NAVBAR */
+nav {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    background: #0f152b ;
+}
+nav ul li a.active,
+nav ul li a:hover {
+    color: #ff960b;
+}
+ nav .btn:hover {
+     background-color: #ff960b;
+     color: #000;
+     transform: translateY(-2px);
+     box-shadow: 0 8px 22px rgba(255, 150, 11, 0.45);
+ }
+
+.logo {
+    width: 35px;
+    margin-left: 270px;
+}
+
+nav ul {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 8px;
+    margin-right: 90px;
+}
+
+nav ul li a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 2px;
+    overflow: hidden;
+}
+
+
+/* Optional color polish */
+nav ul li a:hover {
+    color: #ff950bee;
+}
+
+nav .btn {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 8px 25px;
+    border-radius: 20px;
+    background: transparent;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav .btn:hover {
+    background: #ff960b;
+    color: #000;
+}
+
+/* HEADER */
+.page-header {
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #ff960b;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* METRICS ROW */
+.metrics-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.metric-card {
+    background-color: rgba(255, 150, 11, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+    border: 1px solid #ff960b;
+    color: #fff;
+    box-shadow: #ff950b8e;
+    margin: 10px 13px;
+    box-shadow: 2px 2px 2px rgba(206, 206, 47, 0.3);
+    
+/* Smooth transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect */
+.metric-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(255, 150, 11, 0.5);
+    background-color: rgba(255, 150, 11, 0.2);
+}
+
+.metric-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.metric-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* CHARTS */
+.charts {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  
+}
+
+.chart {
+    background: rgba(255, 150, 11, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 400px;
+    flex: 1;
+    color: #fff;
+    border: 1px solid #ff960b;
+        box-shadow: 10px 10px 20px rgba(206, 206, 47, 0.3);
+}
+
+.chart h3 {
+    margin-bottom: 15px;
+}
+
+/* DATA TABLE */
+.data-table {
+    background: rgba(255, 150, 11, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    border: 1px solid #ff960b;
+    box-shadow: 10px 10px 20px rgba(206, 206, 47, 0.3);
+}
+
+.data-table h3 {
+    margin-bottom: 15px;
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    text-align: center;
+}
+
+.data-table th {
+    background-color: rgba(255, 150, 11, 0.2);
+}

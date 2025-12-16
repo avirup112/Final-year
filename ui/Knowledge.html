@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Knowledge Explorer</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="Knowledge.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <img src="images/logo.png" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ai-chat.html">AI Chat</a></li>
+            <li><a href="Live-data.html">Live Data</a></li>
+            <li><a href="Knowledge.html" class="active">Knowledge Explorer</a></li>
+            <li><a href="Evaluation.html">Evaluation</a></li>
+        </ul>
+    </nav>
+    <br><br>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar / Settings -->
+        <aside class="sidebar">
+            <div class="system-status">
+                <h3>🛠️ System Controls</h3><br>
+                <p class="status langchain">🔗 Using LangChain + Groq</p>
+                <p class="status simple">🔧 Using Simple Mode</p>
+<br>            
+<button id="update-db-btn" class="btn update">🔄 Update Knowledge Base</button>
+<p id="update-status" style="font-size: 0.8em; margin-top: 5px; color: #aaa;"></p>            </div>
+            <div class="system-stats">
+                <h3>📊 System Statistics</h3>
+                <div class="metrics-row">
+                    <div class="metric-card">Total Facts<br>
+                        <span class="metric-value" id="total-facts-val">0</span></div>
+                    <div class="metric-card">Cryptocurrencies<br><span class="metric-value" id="unique-coins-val">0</span></div>
+                </div><br>
+                <div class="tracked-cryptos">
+                    <h4>Tracked Cryptos:</h4>
+                    <p>BTC, ETH, ADA...</p>
+                </div>
+            </div>
+            <div class="settings">
+                <h3>⚙️ Settings</h3><br>
+                <label>Max Search Results: <input type="number" min="1" max="10" value="5"></label>
+                <label><input type="checkbox" checked> Use RAG (Recommended)</label>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="search-section">
+                <input type="text" placeholder="🔍 Search the knowledge base (e.g., Bitcoin price, Ethereum market cap)"
+                    class="search-input">
+                <button class="btn search-btn">Search</button>
+            </section>
+
+            <section class="results-section">
+                <h2>📊 Knowledge Base Statistics</h2>
+                <div class="metrics-row">
+                    <div class="metric-card">Total Facts<br><span class="metric-value">1234</span></div>
+                    <div class="metric-card">Unique Cryptocurrencies<br><span class="metric-value">50</span></div>
+                </div>
+<br>
+                <div class="fact-types">
+                    <h2>Fact Types:</h2><br>
+                    <ul>
+                        <li>Price</li><br>
+                        <li>Market Cap</li><br>
+                        <li>Volume</li><br>
+                        <li>Change</li><br>
+                    </ul><br>
+                </div>
+
+               
+            </section>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoAI | Evaluation</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="evaluation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- NAVBAR -->
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai-chat.html">AI Chat</a></li>
+                <li><a href="Live-data.html">Live Data</a></li>
+                <li><a href="Knowledge.html">Knowledge Explorer</a></li>
+                <li><a class="active" href="#">Evaluation</a></li>
+            </ul>
+        </nav>
+
+        <!-- EVALUATION WRAPPER -->
+        <div class="evaluation-wrapper">
+
+            <!-- HEADER -->
+            <div class="eval-header">
+                <h2>CryptoAI Evaluation Dashboard</h2>
+                <p>Compare RAG-Enhanced and Standard LLM responses</p>
+            </div>
+
+            <!-- QUERY INPUT -->
+            <div class="query-input">
+                <input type="text" id="evalQuery" placeholder="Enter your crypto query...">
+                <button onclick="runEvaluation()">🔬 Run Comparison</button>
+            </div>
+
+            <!-- METRICS -->
+            <div class="metrics">
+                <div class="metric-card">
+                    <h4>Facts Used (RAG)</h4>
+                    <div id="factsRAG">0</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Generation Time (RAG)</h4>
+                    <div id="genTimeRAG">0.00s</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Total Time (RAG)</h4>
+                    <div id="totalTimeRAG">0.00s</div>
+                </div>
+                <div class="metric-card">
+                    <h4>Facts Used (Non-RAG)</h4>
+                    <div>0</div>
+                </div>
+            </div>
+
+            <!-- SIDE-BY-SIDE COMPARISON -->
+            <div class="comparison">
+                <div class="comparison-card rag">
+                    <h3>🤖 RAG-Enhanced Answer</h3>
+                    <div id="ragAnswer">Results will appear here...</div>
+                </div>
+                <div class="comparison-card">
+                    <h3>🧠 Standard LLM Answer</h3>
+                    <div id="nonRagAnswer">Results will appear here...</div>
+                </div>
+            </div>
+
+            <!-- PERFORMANCE CHART -->
+            <div id="perfChart" class="chart-container"></div>
+
+            <!-- SAMPLE QUERIES -->
+            <div class="sample-queries">
+                <h3>💡 Sample Queries</h3>
+                <button onclick="setSampleQuery('What is Bitcoin\'s current price?')">Bitcoin Price</button>
+                <button onclick="setSampleQuery('Which cryptocurrency has the highest market cap?')">Highest Market
+                    Cap</button>
+                <button onclick="setSampleQuery('How much has Ethereum changed in the last 24 hours?')">Ethereum 24h
+                    Change</button>
+                <button onclick="setSampleQuery('Compare the trading volumes of the top 3 cryptocurrencies')">Top 3
+                    Volumes</button>
+            </div>
+
+        </div>
+    </div>
+   <script src="main.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    </body>
+    </html>

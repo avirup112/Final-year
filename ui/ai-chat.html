@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoAI | AI Chat</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- NAVBAR -->
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="#">AI Chat</a></li>
+                <li><a href="Live-data.html">Live Data</a></li>
+                <li><a href="Knowledge.html">Knowledge Explorer</a></li>
+                <li><a href="Evaluation.css">Evaluation</a></li>
+            </ul>
+        </nav>
+
+        <!-- CHAT WRAPPER -->
+        <div class="chat-wrapper">
+
+            <!-- CHAT HEADER -->
+            <div class="chat-header">
+                <h2>CryptoAI Assistant</h2>
+                <p>Enterprise-grade crypto intelligence, on demand</p>
+            </div>
+
+            <!-- CHAT BODY -->
+            <div class="chat-body" id="chat-body">
+
+                <div class="message ai">
+                    <p>Hello. I’m CryptoAI. How can I assist you with market insights today?</p>
+                </div>
+
+                <!-- <div class="message user">
+                    <p>Explain Bitcoin market trends.</p>
+                </div>
+
+                <div class="message ai">
+                    <p>Bitcoin trends are currently influenced by institutional inflows, ETF approvals, and
+                        macroeconomic indicators such as interest rates.</p>
+                </div> -->
+
+            </div>
+
+            <!-- CHAT INPUT -->
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Type your query here..." /><button
+                    onclick="askAI()">Send</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

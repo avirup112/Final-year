@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #11162a;
+    color: #fff;
+}
+
+/* NAVBAR */
+nav {
+    background-color: #0f152b;
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 35px;
+    margin-left: 230px;
+}
+
+nav ul {
+    flex: 1;
+    text-align: center;
+    margin-right: 90px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #ff960b;
+}
+
+/* EVALUATION WRAPPER */
+.evaluation-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #1a1f3a;
+    border-radius: 14px;
+    padding: 2rem;
+    border: 2px solid #ff960b;
+    box-shadow: 0 10px 30px rgba(255, 150, 11, 0.4),
+        0 4px 15px rgba(255, 150, 11, 0.25);
+}
+
+/* HEADER */
+.eval-header h2 {
+    color: #ff960b;
+    font-size: 26px;
+    margin-bottom: 0.5rem;
+}
+
+.eval-header p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+/* QUERY INPUT */
+.query-input {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.query-input input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 25px;
+    border: 2px solid #ff960b;
+    background: #11162a;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+}
+
+.query-input button {
+    margin-left: 12px;
+    padding: 14px 26px;
+    border-radius: 25px;
+    border: none;
+    background: #ff960b;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.query-input button:hover {
+    box-shadow: 0 10px 25px rgba(255, 150, 11, 0.4);
+}
+
+/* METRICS */
+.metrics {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.metric-card {
+    flex: 1;
+    min-width: 180px;
+    background: #11162a;
+    border: 1px solid #ff960b;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.metric-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    color: #ff960b;
+}
+
+/* COMPARISON */
+.comparison {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.comparison-card {
+    flex: 1;
+    min-width: 300px;
+    background: #11162a;
+    border: 1px solid #ff960b;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+}
+
+.comparison-card.rag {
+    border: 1px solid #ff960b;
+    background: #1a1f3a;
+}
+
+.comparison-card h3 {
+    margin-bottom: 1rem;
+    color: #ff960b;
+}
+
+/* CHART */
+.chart-container {
+    font-size: 14px;
+    color: #ff960b;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 2rem;
+    border: 1px solid #ff960b;
+    box-shadow: 0 10px 25px rgba(255, 150, 11, 0.4);
+}
+
+/* SAMPLE QUERIES */
+.sample-queries h3 {
+    margin-bottom: 0.5rem;
+}
+
+.sample-queries button {
+    background-color: #ff960b;
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+

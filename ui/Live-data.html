@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoAI Live Data</title>
+    <link rel="stylesheet" href="Live-data.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai-chat.html">AI Chat</a></li>
+                <li><a class="active" href="#">Live Data</a></li>
+                <li><a href="Knowledge.html">Knowledge Explorer</a></li>
+                <li><a href="Evaluation.html">Evaluation</a></li>
+            </ul>
+        </nav>
+
+        <div class="page-header">
+            <h1>📈 Live Cryptocurrency Data</h1><br>
+            <p>Real-time market facts powered by the Multi-Strategy Retrieval logic.</p>
+        </div>
+
+        <div class="metrics-row">
+            <div class="metric-card">
+                <h3>Total Market Cap</h3>
+                <p id="totalMarketCap">Connecting...</p>
+            </div>
+            <div class="metric-card">
+                <h3>24h Market Volume</h3>
+                <p id="totalVolume24h">Connecting...</p>
+            </div>
+            <div class="metric-card">
+                <h3>BTC Dominance</h3>
+                <p id="btcDominance">Connecting...</p>
+            </div>
+            <div class="metric-card">
+                <h3>Active Cryptos</h3>
+                <p id="activeCount">0</p>
+            </div>
+        </div>
+
+        <div class="charts">
+            <div class="chart">
+                <h3>Top 10 Assets by Price (USD)</h3>
+                <div id="chart-prices"></div>
+            </div>
+            <div class="chart">
+                <h3>24h Performance (%)</h3>
+                <div id="chart-changes"></div>
+            </div>
+        </div>
+
+        <div class="data-table">
+            <h3>📋 Detailed Market Metadata</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Symbol</th>
+                        <th>Price (USD)</th>
+                        <th>24h Change (%)</th>
+                        <th>Market Cap</th>
+                        <th>Volume (24h)</th>
+                    </tr>
+                </thead>
+                <tbody id="cryptoTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
