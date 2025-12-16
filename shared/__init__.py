@@ -1,0 +1,1 @@
+# Shared package for crypto knowledge system
