@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoAI | AI Chat</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="stylesheet" href="chat.css">
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <link rel="stylesheet" href="/static/chat.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 
         <!-- NAVBAR -->
         <nav>
-            <img src="images/logo.png" class="logo">
+            <img src="/static/images/logo.png" class="logo">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" href="#">AI Chat</a></li>
@@ -36,20 +36,15 @@
 
             <!-- CHAT BODY -->
             <div class="chat-body" id="chat-body">
-
                 <div class="message ai">
-                    <p>Hello. I’m CryptoAI. How can I assist you with market insights today?</p>
+                    <p>Hello! I'm your CryptoAI assistant. Ask me about real-time prices, market trends, or technical
+                        concepts.</p>
                 </div>
 
-                <!-- <div class="message user">
-                    <p>Explain Bitcoin market trends.</p>
+                <!-- Typing Indicator (Hidden by default) -->
+                <div class="typing-indicator" id="loading-indicator">
+                    <span></span><span></span><span></span>
                 </div>
-
-                <div class="message ai">
-                    <p>Bitcoin trends are currently influenced by institutional inflows, ETF approvals, and
-                        macroeconomic indicators such as interest rates.</p>
-                </div> -->
-
             </div>
 
             <!-- CHAT INPUT -->
@@ -60,7 +55,7 @@
 
         </div>
     </div>
-    <script src="main.js"></script>
+    <script src="/static/main.js"></script>
 
 </body>
 

@@ -110,11 +110,12 @@ function renderCharts(topTen) {
     Plotly.newPlot('chart-changes', changeData, layout);
 }
 
-// Initial Load
-updateDashboard();
-
-// Auto-refresh every 60 seconds (aligned with API rate limits)
-setInterval(updateDashboard, 60000);
+// Initial Load - only run if on Live Data page
+if (document.getElementById("totalMarketCap")) {
+    updateDashboard();
+    // Auto-refresh every 60 seconds (aligned with API rate limits)
+    setInterval(updateDashboard, 60000);
+}
 
 
 // evaluation
@@ -192,26 +193,54 @@ async function askAI() {
     if (!query) return;
 
     appendMessage('user', query); // Helper to add user bubble
+    // Clear input
     inputField.value = '';
 
+    // Show loading indicator
+    const loader = document.getElementById('loading-indicator');
+    if (loader) {
+        loader.style.display = 'block';
+        const chatBody = document.getElementById('chat-body');
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
     try {
-        const response = await fetch("http://localhost:8000/generate_answer", {
+        const response = await fetch("/generate_answer", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query: query, use_rag: true })
         });
+
         const data = await response.json();
         
-        // Display answer with "Live Facts" and "Time" badges matching your UI
-        const aiHtml = `
-            <p>${data.answer}</p>
-            <div class="ai-metadata">
-                <span class="fact-badge">📖 ${data.facts_used} Live Facts</span>
-                <span class="time-badge">⏱️ ${data.generation_time.toFixed(2)}s</span>
-            </div>`;
-        appendMessage('ai', aiHtml);
-    } catch (err) {
-        appendMessage('ai', "Error connecting to AI service.");
+        // Hide loading indicator
+        if (loader) loader.style.display = 'none';
+
+        if (data.answer) {
+            appendMessage('ai', data.answer);
+            
+            // Add metadata badge if available
+            if (data.facts_used !== undefined) {
+                const lastMsg = document.querySelector('.message.ai:last-of-type');
+                if (lastMsg) {
+                    const metaDiv = document.createElement('div');
+                    metaDiv.className = 'ai-metadata';
+                    metaDiv.innerHTML = `
+                        <span class="fact-badge">📚 ${data.facts_used} facts</span>
+                        <span class="time-badge">⏱️ ${data.generation_time.toFixed(2)}s</span>
+                    `;
+                    lastMsg.appendChild(metaDiv);
+                }
+            }
+        } else {
+            appendMessage('ai', "I apologize, but I couldn't generate an answer at this time.");
+        }
+
+    } catch (error) {
+        console.error('Error:', error);
+        // Hide loading indicator
+        if (loader) loader.style.display = 'none';
+        appendMessage('ai', "Sorry, I encountered an error connecting to the server.");
     }
 }
 // knowledge
@@ -347,29 +376,31 @@ async function searchKnowledgeBase() {
         console.error("Knowledge search error:", err);
     }
 }
-// // UPDATE startApp to include the new loader
-// function startApp() {
-//     console.log("App Starting...");
-//     loadIndexData();
-//     loadLiveDashboard();
-//     loadKnowledgeStats(); // ADD THIS LINE
-
-//     // Add search button listener
-//     const searchBtn = document.querySelector('.search-btn');
-//     if (searchBtn) {
-//         searchBtn.onclick = searchKnowledgeBase;
-//     }
-//     // ... rest of your startApp logic
-// }
 // Update your startApp() to include these new functions
 function startApp() {
-    loadIndexData();
-    loadLiveDashboard();
-    loadKnowledgeStats(); // New initialization 
+    console.log("App Initializing...");
     
-    // Add listener for search button
+    // Only load prices if on index page
+    if (document.getElementById("btcPrice")) {
+        loadPrices();
+    }
+    
+    // Only load knowledge stats if on Knowledge page
+    if (document.getElementById("total-facts-val")) {
+        loadKnowledgeStats();
+    }
+    
+    // Add listener for search button (Knowledge page)
     const searchBtn = document.querySelector('.search-btn');
     if (searchBtn) searchBtn.onclick = searchKnowledgeBase;
+    
+    // Add Enter key support for chat input
+    const inputField = document.querySelector('.chat-input input');
+    if (inputField) {
+        inputField.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') askAI();
+        });
+    }
 }
 /**
  * UI HELPERS
@@ -389,28 +420,6 @@ function appendMessage(sender, text, id = null) {
 /**
  * INITIALIZATION
  */
-function appendMessage(sender, text, id = null) {
-    const chatBody = document.getElementById('chat-body');
-    if (!chatBody) return;
-    const msgDiv = document.createElement('div');
-    msgDiv.className = `message ${sender}`;
-    if (id) msgDiv.id = id;
-    msgDiv.innerHTML = `<p>${text}</p>`;
-    chatBody.appendChild(msgDiv);
-}
-
-function startApp() {
-    console.log("App Initializing...");
-    loadPrices();
-    updateDashboard();
-
-    const inputField = document.querySelector('.chat-input input');
-    if (inputField) {
-        inputField.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') askAI();
-        });
-    }
-}
 
 // Global start
 window.addEventListener("DOMContentLoaded", startApp);

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Knowledge Explorer</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
 
-    <link rel="stylesheet" href="Knowledge.css">
+    <link rel="stylesheet" href="/static/Knowledge.css">
 </head>
 
 <body>
 
     <nav class="navbar">
-        <img src="images/logo.png" class="logo">
+        <img src="/static/images/logo.png" class="logo">
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="ai-chat.html">AI Chat</a></li>
@@ -32,15 +32,18 @@
                 <h3>🛠️ System Controls</h3><br>
                 <p class="status langchain">🔗 Using LangChain + Groq</p>
                 <p class="status simple">🔧 Using Simple Mode</p>
-<br>            
-<button id="update-db-btn" class="btn update">🔄 Update Knowledge Base</button>
-<p id="update-status" style="font-size: 0.8em; margin-top: 5px; color: #aaa;"></p>            </div>
+                <br>
+                <button id="update-db-btn" class="btn update">🔄 Update Knowledge Base</button>
+                <p id="update-status" style="font-size: 0.8em; margin-top: 5px; color: #aaa;"></p>
+            </div>
             <div class="system-stats">
                 <h3>📊 System Statistics</h3>
                 <div class="metrics-row">
                     <div class="metric-card">Total Facts<br>
-                        <span class="metric-value" id="total-facts-val">0</span></div>
-                    <div class="metric-card">Cryptocurrencies<br><span class="metric-value" id="unique-coins-val">0</span></div>
+                        <span class="metric-value" id="total-facts-val">0</span>
+                    </div>
+                    <div class="metric-card">Cryptocurrencies<br><span class="metric-value"
+                            id="unique-coins-val">0</span></div>
                 </div><br>
                 <div class="tracked-cryptos">
                     <h4>Tracked Cryptos:</h4>
@@ -68,7 +71,7 @@
                     <div class="metric-card">Total Facts<br><span class="metric-value">1234</span></div>
                     <div class="metric-card">Unique Cryptocurrencies<br><span class="metric-value">50</span></div>
                 </div>
-<br>
+                <br>
                 <div class="fact-types">
                     <h2>Fact Types:</h2><br>
                     <ul>
@@ -79,11 +82,11 @@
                     </ul><br>
                 </div>
 
-               
+
             </section>
         </main>
     </div>
-    <script src="main.js"></script>
+    <script src="/static/main.js"></script>
 </body>
 
 </html>
